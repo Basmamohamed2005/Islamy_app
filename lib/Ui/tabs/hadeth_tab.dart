@@ -8,6 +8,7 @@ class HadethTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return   BaseTabBody(child: Center(child: Text("data"),));
   }
 }
