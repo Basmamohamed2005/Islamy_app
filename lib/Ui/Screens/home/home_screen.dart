@@ -75,7 +75,8 @@ List<String>backgrounImages=[AppImages.quranbc,
 
         )
 
-        ,decoration: BoxDecoration( gradient: LinearGradient(begin: Alignment.bottomCenter,end: Alignment.topCenter,
+        ,decoration: BoxDecoration( gradient: LinearGradient(
+          begin: Alignment.bottomCenter,end: Alignment.topCenter,
           colors:[ AppColores.black,
 
             AppColores.black.withAlpha(180)]),),),
