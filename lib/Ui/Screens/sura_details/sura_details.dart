@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/Ui/models/sura.dart';
+import 'package:islamy/assets/app_images.dart';
 import 'package:islamy/core/styles/app_colores.dart';
 import 'package:islamy/core/styles/text_styles.dart';
 
@@ -26,14 +27,38 @@ class _SuraDetailsState extends State<SuraDetails> {
 
     return Scaffold(
       backgroundColor: AppColores.black,
-      appBar: AppBar(
+      appBar: AppBar(surfaceTintColor: Colors.transparent,
         backgroundColor: AppColores.black,
         title: Text(widget.sura.nameEn),centerTitle: true,
         foregroundColor: AppColores.gold,
 
       ),
       body:suraContent==null? Center(child: CircularProgressIndicator(),):
-      Text(suraContent!,style: TextStyles.largeBodyTextStyle(),)
+      Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Image.asset(AppImages.imgleftcorner),
+                Expanded(child:
+                Text(
+                  widget.sura.nameAr,style:
+                TextStyles.largeLabelTextStyle(),textAlign: TextAlign.center,)),
+                Image.asset(AppImages.imgrightcorner),
+
+              ],
+            ),
+          ),
+          Expanded(child: SingleChildScrollView(child:
+          Text(
+            suraContent!,style:
+          TextStyles.largeBodyTextStyle(),textAlign: TextAlign.center,)
+          )
+          ),
+          Image.asset(AppImages.imgbottomdecoration)
+        ],
+      )
     );
   }
    Future<void> loadSuraDetails()async{
