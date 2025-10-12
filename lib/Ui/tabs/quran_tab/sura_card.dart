@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/Ui/Screens/sura_details/sura_details.dart';
 import 'package:islamy/Ui/models/sura.dart';
 import 'package:islamy/assets/app_images.dart';
 import 'package:islamy/core/styles/text_styles.dart';
@@ -11,7 +10,7 @@ class SuraCard extends StatelessWidget {
 
 
 
-  SuraCard({required this.sura,required this.number,required this.onSuraClick});
+  const SuraCard({required this.sura,required this.number, required this.onSuraClick});
 
   @override
   Widget build(BuildContext context) {
