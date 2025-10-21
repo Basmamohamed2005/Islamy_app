@@ -7,8 +7,11 @@ class Sura{
    Sura({required this.nameAr,
      required this.nameEn,
      required this.ayaNumbers,
-     required this.id});
+     required this.id,
+
+   });
    static void generateSurasList(){
+     suras=[];
      for(int i=0;i<arabicAuranSuras.length;i++){
       suras.add( Sura(ayaNumbers:AyaNumber[i],
           nameAr:arabicAuranSuras[i],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamy/Ui/tabs/hadeth_tab.dart';
+import 'package:islamy/Ui/tabs/hadeth_tab/hadeth_tab.dart';
 import 'package:islamy/Ui/tabs/quran_tab/quran_tab.dart';
 import 'package:islamy/Ui/tabs/radio_tab.dart';
 import 'package:islamy/Ui/tabs/sebha_tab.dart';
@@ -38,40 +38,38 @@ List<String>backgrounImages=[AppImages.quranbc,
         child: Scaffold(body: tabs[selectedIndex],
           backgroundColor: Colors.transparent,
 
-          bottomNavigationBar: SizedBox(height: 120,
-            child: BottomNavigationBar(
-                currentIndex:selectedIndex ,
-                onTap: (newIndex){
-                  selectedIndex=newIndex;
+          bottomNavigationBar: BottomNavigationBar(
+              currentIndex:selectedIndex ,
+              onTap: (newIndex){
+                selectedIndex=newIndex;
 
-                  setState(() {
+                setState(() {
 
-                  });
-                },
-                unselectedItemColor: AppColores.black,
-                selectedItemColor: AppColores.white,
-                type:BottomNavigationBarType.fixed ,
-                backgroundColor: AppColores.gold,
-                showSelectedLabels: true,
-                showUnselectedLabels: false,
-                items: [
-                  BottomNavigationBarItem(icon:
-                  customBottomNavigationBarIcon(imagePath: AppImages.quran, isSelected: selectedIndex==0),
-                      label:  "Quran"),
-                  BottomNavigationBarItem(icon:
-                  customBottomNavigationBarIcon(imagePath: AppImages.hadeth, isSelected: selectedIndex==1),
-                      label: "hadeth"),
-                  BottomNavigationBarItem(icon:
-                  customBottomNavigationBarIcon(imagePath: AppImages.sebha, isSelected: selectedIndex==2),
-                      label: "sebha"),
-                  BottomNavigationBarItem(icon:
-                  customBottomNavigationBarIcon(imagePath: AppImages.radio, isSelected: selectedIndex==3),
-                      label: "radio"),
-                  BottomNavigationBarItem(icon:
-                  customBottomNavigationBarIcon(imagePath: AppImages.hadeth, isSelected: selectedIndex==1),
-                      label: "time"),
-                ]),
-          ),
+                });
+              },
+              unselectedItemColor: AppColores.black,
+              selectedItemColor: AppColores.white,
+              type:BottomNavigationBarType.fixed ,
+              backgroundColor: AppColores.gold,
+              showSelectedLabels: true,
+              showUnselectedLabels: false,
+              items: [
+                BottomNavigationBarItem(icon:
+                customBottomNavigationBarIcon(imagePath: AppImages.quran, isSelected: selectedIndex==0),
+                    label:  "Quran"),
+                BottomNavigationBarItem(icon:
+                customBottomNavigationBarIcon(imagePath: AppImages.hadeth, isSelected: selectedIndex==1),
+                    label: "hadeth"),
+                BottomNavigationBarItem(icon:
+                customBottomNavigationBarIcon(imagePath: AppImages.sebha, isSelected: selectedIndex==2),
+                    label: "sebha"),
+                BottomNavigationBarItem(icon:
+                customBottomNavigationBarIcon(imagePath: AppImages.radio, isSelected: selectedIndex==3),
+                    label: "radio"),
+                BottomNavigationBarItem(icon:
+                customBottomNavigationBarIcon(imagePath: AppImages.hadeth, isSelected: selectedIndex==1),
+                    label: "time"),
+              ]),
 
         )
 

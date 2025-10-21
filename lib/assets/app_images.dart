@@ -19,4 +19,16 @@ abstract class AppImages {
   static const String morebg = 'assets/images/more_bg.png';
   static const String imgheader= 'assets/images/img_header.png';
   static const String suraNumberDecoration= 'assets/images/sura_number_decoration.png';
+  static const String imgbottomdecoration= 'assets/images/img_bottom_decoration.png';
+  static const String imgleftcorner= 'assets/images/img_left_corner.png';
+  static const String hadethleftcorner= 'assets/images/left_corner.png';
+  static const String imgrightcorner= 'assets/images/img_right_corner.png';
+  static const String hadethrightcorner= 'assets/images/right_corner.png';
+  static const String quranSura= 'assets/images/quranSura.png';
+  static const String HadithCardBackGround= 'assets/images/HadithCardBackGround 1.png';
+  static const String frame1= 'assets/images/Frame 1x.png';
+  static const String frame2= 'assets/images/Frame 2.png';
+  static const String frame3= 'assets/images/Frame 3.png';
+  static const String frame4= 'assets/images/Frame 4.png';
+  static const String frame5= 'assets/images/Frame 5.png';
 }
