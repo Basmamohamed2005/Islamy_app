@@ -23,43 +23,77 @@ class _sebhaTabState extends State<sebhaTab> {
     'أستغفر الله',
     'لا حول ولا قوة إلا بالله',
     'اللهم صلِّ على محمد',
-    'سبحان الله وبحمده عدد خلقه ورضا نفسه وزنة عرشه ومداد كلماته',
+
   ];
+  double turns = 0.0;
+  bool Azkar=false;
+  void _changeRotation() {
+    setState(() => turns  += 1.0 / 64.0);
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return BaseTabBody(child: InkWell(splashColor: Colors.transparent,
-      focusColor: Colors.transparent,highlightColor: Colors.transparent ,hoverColor:  Colors.transparent,
+    return BaseTabBody(child: GestureDetector(
       onTap: (){
+
       sebhaCounter+=1;
-      wordsCounter+=1;
-      if ( wordsCounter >10 ){
+      if ( wordsCounter >9 ){
         wordsCounter=1;
       }
+      if( sebhaCounter%33==0){
+        wordsCounter+=1;
+      }
+      if (sebhaCounter==1) {
+        wordsCounter=1;
+
+      }
+
+
+      _changeRotation();
 
       setState(() {
 
       });
     },
       child: Column(
-      
+
         children: [
           Text("سَبِّحِ اسْمَ رَبِّكَ الأعلى " ,style: TextStyles.largeTitleTextStyle(textColor: Colors.white),),
           SizedBox(height: 40,),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          Expanded(
             child: Stack(alignment: Alignment.center,
               children: [
-                Image.asset("assets/images/SebhaBody 1 .png"),
-                Column(
+                Stack(alignment: Alignment.topCenter,
                   children: [
-                    Text(tasbihWords[wordsCounter],style: TextStyles.largeTitleTextStyle(textColor: Colors.white),),
-                    Text( sebhaCounter.toString() ,style: TextStyles.largeTitleTextStyle(textColor: Colors.white),),
+                    Positioned(width: 50,top: 0,
+                        child: Image.asset("assets/images/Mask group .png",)),
+                    Positioned(top: 50,
+                        child:  AnimatedRotation(
+                            turns: turns,duration: Duration(milliseconds: 120),
+                            child: Image.asset("assets/images/SebhaBody 1 (1).png"))),
+
                   ],
+                ),
+                Positioned(bottom: MediaQuery.of(context).size.height*0.339,
+                  child: Column(
+                    children: [
+                      Text(sebhaCounter.toString(),style: TextStyles.mediumLabelTextStyle(),textAlign: TextAlign.center,),
+                      Text( tasbihWords[wordsCounter]
+
+                        ,style: TextStyles.mediumLabelTextStyle(),textAlign: TextAlign.center,),
+                    ],
+                  ),
                 )
               ],
             ),
-          )],
+          )
+
+          ],
+
+
       ),
     ),);
+
   }
 }

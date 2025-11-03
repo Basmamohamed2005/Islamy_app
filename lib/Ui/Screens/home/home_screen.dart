@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy/Ui/tabs/hadeth_tab/hadeth_tab.dart';
 import 'package:islamy/Ui/tabs/quran_tab/quran_tab.dart';
 import 'package:islamy/Ui/tabs/radio_tab.dart';
-import 'package:islamy/Ui/tabs/sebha_tab.dart';
+import 'package:islamy/Ui/tabs/sebha_tab/sebha_tab.dart';
 import 'package:islamy/Ui/tabs/time_tab.dart';
 import 'package:islamy/assets/app_images.dart';
 import 'package:islamy/core/styles/app_colores.dart';
